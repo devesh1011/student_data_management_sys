@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db");
+require("dotenv").config()
 const PORT = process.env.PORT || 8080;
 const studentRoutes = require("./routes/student_routes");
 
@@ -13,6 +14,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  connectDB();
+  connectDB(process.env.DB_URI);
   console.log(`Listening to port ${PORT}`);
 });
