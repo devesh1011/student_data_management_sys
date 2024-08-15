@@ -3,7 +3,7 @@ const connectDB = require("./config/db");
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const studentRoutes = require("./routes/student_routes");
-const cors = require("./config/cors");
+const corsOptions = require("./config/cors");
 
 const app = express();
 
