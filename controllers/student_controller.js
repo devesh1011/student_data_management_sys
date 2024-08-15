@@ -182,7 +182,7 @@ const getStudentById = async (req, res) => {
   const { enrollment } = req.params;
 
   try {
-    const student = await StudentData.findOne({ enrollment_no: enrollment });
+    const student = await StudentData.find({ enrollment_no: enrollment });
 
     if (!student) {
       return sendErrorResponse(res, 404, "Student not found.");
