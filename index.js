@@ -1,11 +1,13 @@
 const express = require("express");
 const connectDB = require("./config/db");
-require("dotenv").config()
+require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const studentRoutes = require("./routes/student_routes");
+const cors = require("./config/cors");
 
 const app = express();
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(studentRoutes);
 
