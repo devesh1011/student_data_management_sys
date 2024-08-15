@@ -4,6 +4,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const studentRoutes = require("./routes/student_routes");
 const corsOptions = require("./config/cors");
+const cors = require("cors");
 
 const app = express();
 
